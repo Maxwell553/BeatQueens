@@ -1,0 +1,19 @@
+[package]
+name = "queens"
+version = "1.0.0"
+edition = "2021"
+description = "Bit-parallel LinkedIn Queens solver"
+publish = false
+
+[[bin]]
+name = "queens"
+path = "src/main.rs"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+opt-level = 3
+panic = "abort"
+
+[profile.release.build-override]
+opt-level = 3
